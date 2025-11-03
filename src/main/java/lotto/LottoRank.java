@@ -2,6 +2,8 @@ package lotto;
 
 import java.util.Arrays;
 
+import static lotto.InputParser.ERROR_PREFIX;
+
 public enum LottoRank {
     FIFTH(3, "5000", "3개 일치 (5,000원)"),
     FOURTH(4, "50000", "4개 일치 (50,000원)"),
@@ -23,6 +25,6 @@ public enum LottoRank {
         return Arrays.stream(LottoRank.values())
                 .filter(r -> r.count == matchCount)
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 잘못된 당첨 등수 입니다."));
+                .orElseThrow(() -> new IllegalArgumentException(ERROR_PREFIX + "Invalid Lotto Rank"));
     }
 }

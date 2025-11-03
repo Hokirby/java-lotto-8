@@ -36,7 +36,7 @@ public class ConsolePrinter {
             for (Integer number : numbers) {
                 stringBuilder.append(number).append(", ");
             }
-            // 쉽표제거
+            // 쉼표제거
             stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length());
             stringBuilder.append("]").append("\n");
         }

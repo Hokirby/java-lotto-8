@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
 
+import static lotto.ConstantMessages.LOTT0_NUMBER_SIZE_MUST_BE_SIX_ERROR;
+import static lotto.ConstantMessages.LOTTO_NUMBER_DUPLICATED_ERROR;
 import static lotto.InputParser.ERROR_PREFIX;
 
 public class Lotto {
@@ -20,14 +22,14 @@ public class Lotto {
 
     private void validate(List<Integer> numbers) {
         if (numbers.size() != 6) {
-            throw new IllegalArgumentException(ERROR_PREFIX + "로또 번호는 6개여야 합니다.");
+            throw new IllegalArgumentException(ERROR_PREFIX + LOTT0_NUMBER_SIZE_MUST_BE_SIX_ERROR.getMessage());
         }
     }
 
     private void distinct(List<Integer> numbers) {
         // 중복 제거
         if (numbers.stream().distinct().count() != 6) {
-            throw new IllegalArgumentException(ERROR_PREFIX + "로또 번호는 중복되어선 안됩니다.");
+            throw new IllegalArgumentException(ERROR_PREFIX + LOTTO_NUMBER_DUPLICATED_ERROR.getMessage());
         }
     }
 
