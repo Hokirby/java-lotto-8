@@ -21,7 +21,7 @@ public class ConsolePrinter {
         System.out.println(INPUT_WINNING_NUMBERS.getMessage());
     }
     public static void printBonusMessage() {
-        System.out.println(INPUT_BONUS_NUMBERS.getMessage());
+        System.out.println("\n" + INPUT_BONUS_NUMBERS.getMessage());
     }
 
     public static void printEarningRateMessage(BigDecimal rate) {
